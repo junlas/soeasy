@@ -27,19 +27,39 @@ var egret;
     * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     */
     (function (localStorage) {
+        /**
+        * 读取数据
+        * @method egret.localStorage.getItem
+        * @param key {string} 要读取的键名称
+        */
         function getItem(key) {
             return null;
         }
         localStorage.getItem = getItem;
 
+        /**
+        * 保存数据
+        * @method egret.localStorage.setItem
+        * @param key {string} 要保存的键名称
+        * @param value {string} 要保存的值
+        */
         function setItem(key, value) {
         }
         localStorage.setItem = setItem;
 
+        /**
+        * 删除数据
+        * @method egret.localStorage.removeItem
+        * @param key {string} 要删除的键名称
+        */
         function removeItem(key) {
         }
         localStorage.removeItem = removeItem;
 
+        /**
+        * 将所有数据清空
+        * @method egret.localStorage.clear
+        */
         function clear() {
         }
         localStorage.clear = clear;

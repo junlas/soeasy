@@ -88,5 +88,6 @@ var egret_file_list = [
 "core/egret/context/renderer/webgl/WebGLUtils.js",
 "core/egret/context/renderer/webgl/WebGLShaderManager.js",
 "core/egret/context/net/HTML5NetContext.js",
-"core/egret/context/interactive/HTML5TouchContext.js"];
+"core/egret/context/interactive/HTML5TouchContext.js",
+"core/egret/context/display/HTML5StageText.js"];
 ;

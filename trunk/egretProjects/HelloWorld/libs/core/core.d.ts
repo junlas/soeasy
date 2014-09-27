@@ -2185,6 +2185,7 @@ declare module egret {
         static getInstance(): StageDelegate;
         /**
         * @member egret.StageDelegate.canvas_name
+        * @deprecated
         */
         static canvas_name: string;
         /**
@@ -2197,6 +2198,8 @@ declare module egret {
         public _scaleY: number;
         public _offSetY: number;
         private _resolutionPolicy;
+        public _stageWidth: number;
+        public _stageHeight: number;
         /**
         * @method egret.StageDelegate#constructor
         */
@@ -2298,6 +2301,7 @@ declare module egret {
         * @param designedResolutionHeight {number}
         */
         public _apply(delegate: StageDelegate, designedResolutionWidth: number, designedResolutionHeight: number): void;
+        public setEgretSize(w: number, h: number, styleW: number, styleH: number, top?: number): void;
     }
     /**
     * @class egret.FixedHeight
@@ -3510,7 +3514,7 @@ declare module egret {
         * @param anchorX {number} 一个数字，指定下一个锚点相对于父显示对象注册点的水平位置。
         * @param anchorY {number} 一个数字，指定下一个锚点相对于父显示对象注册点的垂直位置。
         */
-        public curveTo(controlX: Number, controlY: Number, anchorX: Number, anchorY: Number): void;
+        public curveTo(controlX: number, controlY: number, anchorX: number, anchorY: number): void;
         /**
         * 将当前绘图位置移动到 (x, y)。如果缺少任何一个参数，则此方法将失败，并且当前绘图位置不改变。
         * @method egret.Graphics#moveTo
@@ -3529,6 +3533,14 @@ declare module egret {
         */
         public endFill(): void;
         public _draw(renderContext: RendererContext): void;
+        private _minX;
+        private _minY;
+        private _maxX;
+        private _maxY;
+        private checkRect(x, y, w, h);
+        private _lastX;
+        private _lastY;
+        private checkPoint(x, y);
     }
 }
 /**
@@ -3657,37 +3669,43 @@ declare module egret {
         public _text: string;
         public text : string;
         public _setTextDirty(): void;
+        public _setText(value: string): void;
         /**
         * 字体
         * @member {any} egret.TextField#fontFamily
         */
         public _fontFamily: string;
         public fontFamily : string;
+        public _setFontFamily(value: string): void;
         /**
         * 字号
         * @member {number} egret.TextField#size
         */
         public _size: number;
         public size : number;
+        public _setSize(value: number): void;
         /**
         * 是否显示为斜体，默认false。
         * @member {boolean} egret.TextField#italic
         */
         public _italic: boolean;
         public italic : boolean;
+        public _setItalic(value: boolean): void;
         /**
         * 是否显示为粗体，默认false。
         * @member {boolean} egret.TextField#bold
         */
         public _bold: boolean;
         public bold : boolean;
+        public _setBold(value: boolean): void;
         public _textColorString: string;
-        private _textColor;
+        public _textColor: number;
         /**
         * 文字颜色
         * @member {number} egret.TextField#textColor
         */
         public textColor : number;
+        public _setTextColor(value: number): void;
         public _strokeColorString: string;
         private _strokeColor;
         /**
@@ -3695,24 +3713,28 @@ declare module egret {
         * @member {number} egret.TextField#strokeColor
         */
         public strokeColor : number;
+        public _setStrokeColor(value: number): void;
         /**
         * 描边宽度，0为没有描边
         * @member {number} egret.TextField#stroke
         */
         public _stroke: number;
         public stroke : number;
+        public _setStroke(value: number): void;
         /**
         * 文本水平对齐方式,使用HorizontalAlign定义的常量，默认值HorizontalAlign.LEFT。
         * @member {string} egret.TextField#textAlign
         */
         public _textAlign: string;
         public textAlign : string;
+        public _setTextAlign(value: string): void;
         /**
         * 文本垂直对齐方式,使用VerticalAlign定义的常量，默认值VerticalAlign.TOP。
         * @member {string} egret.TextField#verticalAlign
         */
         public _verticalAlign: string;
         public verticalAlign : string;
+        public _setVerticalAlign(value: string): void;
         /**
         * @member {any} egret.TextField#maxWidth
         */
@@ -3723,6 +3745,7 @@ declare module egret {
         */
         public _lineSpacing: number;
         public lineSpacing : number;
+        public _setLineSpacing(value: number): void;
         private _numLines;
         /**
         * 文本行数
@@ -3909,10 +3932,20 @@ declare module egret {
 * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 declare module egret {
-    class TextInput extends DisplayObject {
+    class TextInput extends Sprite {
+        private _text;
         private stageText;
+        private _isFocus;
         constructor();
         public _onAddToStage(): void;
+        private onFocusHandler(event);
+        private onBlurHandler(event);
+        private onMouseDownHandler(event);
+        private onStageDownHandler(event);
+        private showText();
+        private hideText();
+        public _onRemoveFromStage(): void;
+        private updateTextHandler(event);
         /**
         * @deprecated
         * @param value
@@ -3926,11 +3959,9 @@ declare module egret {
         public text : string;
         public setTextType(type: string): void;
         public getTextType(): string;
-        private onMouseDownHandler(event);
-        public _onRemoveFromStage(): void;
-        public _measureBounds(): Rectangle;
-        public hitTest(x: any, y: any, ignoreTouchEnabled?: boolean): DisplayObject;
+        private resetText();
         public _updateTransform(): void;
+        public _draw(renderContext: RendererContext): void;
         /**
         * 字号
         * @member {number} egret.TextField#size
@@ -3944,6 +3975,23 @@ declare module egret {
         * @member {number} egret.TextField#textColor
         */
         public textColor : number;
+        /**
+        * 字体
+        * @member {any} egret.TextField#fontFamily
+        */
+        public _fontFamily: string;
+        public fontFamily : string;
+        public _setFontFamily(value: string): void;
+        public _setWidth(value: number): void;
+        public _setHeight(value: number): void;
+        private _multiline;
+        public _setMultiline(value: boolean): void;
+        /**
+        * 表示字段是否为多行文本字段。如果值为 true，则文本字段为多行文本字段；如果值为 false，则文本字段为单行文本字段。在类型为 TextFieldType.INPUT 的字段中，multiline 值将确定 Enter 键是否创建新行（如果值为 false，则将忽略 Enter 键）。如果将文本粘贴到其 multiline 值为 false 的 TextField 中，则文本中将除去新行。
+        * 默认值为 false。
+        * @returns {boolean}
+        */
+        public multiline : boolean;
     }
 }
 /**
@@ -4138,10 +4186,9 @@ declare module egret {
     * @classdesc
     * @extends egret.HashObject
     */
-    class StageText extends HashObject {
-        private div;
-        private inputElement;
-        private _size;
+    class StageText extends EventDispatcher {
+        public _multiline: boolean;
+        public _maxChars: number;
         constructor();
         /**
         * @method egret.StageText#getText
@@ -4171,22 +4218,27 @@ declare module egret {
         * @param height {number}
         */
         public _open(x: number, y: number, width?: number, height?: number): void;
-        private _addListeners();
-        private _removeListeners();
-        private onHandler(e);
-        private getStageDelegateDiv();
         /**
         * @method egret.StageText#add
         */
-        public _add(): void;
+        public _show(): void;
         /**
         * @method egret.StageText#remove
         */
         public _remove(): void;
+        public _hide(): void;
+        public _draw(): void;
+        public _addListeners(): void;
+        public _removeListeners(): void;
         public changePosition(x: number, y: number): void;
         public changeSize(width: number, height: number): void;
         public setSize(value: number): void;
         public setTextColor(value: string): void;
+        public setTextFontFamily(value: string): void;
+        public setWidth(value: number): void;
+        public setHeight(value: number): void;
+        public _setMultiline(value: boolean): void;
+        static create(): StageText;
     }
 }
 /**
@@ -5058,9 +5110,29 @@ declare module egret {
 * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 declare module egret.localStorage {
+    /**
+    * 读取数据
+    * @method egret.localStorage.getItem
+    * @param key {string} 要读取的键名称
+    */
     function getItem(key: string): string;
+    /**
+    * 保存数据
+    * @method egret.localStorage.setItem
+    * @param key {string} 要保存的键名称
+    * @param value {string} 要保存的值
+    */
     function setItem(key: string, value: string): void;
+    /**
+    * 删除数据
+    * @method egret.localStorage.removeItem
+    * @param key {string} 要删除的键名称
+    */
     function removeItem(key: string): void;
+    /**
+    * 将所有数据清空
+    * @method egret.localStorage.clear
+    */
     function clear(): void;
 }
 /**

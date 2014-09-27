@@ -34,10 +34,11 @@ var egret;
 (function (egret) {
     var HTML5TouchContext = (function (_super) {
         __extends(HTML5TouchContext, _super);
-        function HTML5TouchContext(canvas) {
+        function HTML5TouchContext() {
             _super.call(this);
-            this.canvas = canvas;
             this._isTouchDown = false;
+
+            this.rootDiv = document.getElementById(egret.StageDelegate.canvas_div_name);
         }
         HTML5TouchContext.prototype.prevent = function (event) {
             event.stopPropagation();
@@ -49,15 +50,15 @@ var egret;
         HTML5TouchContext.prototype.run = function () {
             var that = this;
             if (window.navigator.msPointerEnabled) {
-                document.body.addEventListener("MSPointerDown", function (event) {
+                this.rootDiv.addEventListener("MSPointerDown", function (event) {
                     that._onTouchBegin(event);
                     that.prevent(event);
                 }, false);
-                document.body.addEventListener("MSPointerMove", function (event) {
+                this.rootDiv.addEventListener("MSPointerMove", function (event) {
                     that._onTouchMove(event);
                     that.prevent(event);
                 }, false);
-                document.body.addEventListener("MSPointerUp", function (event) {
+                this.rootDiv.addEventListener("MSPointerUp", function (event) {
                     that._onTouchEnd(event);
                     that.prevent(event);
                 }, false);
@@ -86,41 +87,41 @@ var egret;
 
         HTML5TouchContext.prototype.addMouseListener = function () {
             var that = this;
-            document.body.addEventListener("mousedown", function (event) {
+            this.rootDiv.addEventListener("mousedown", function (event) {
                 that._onTouchBegin(event);
             });
-            document.body.addEventListener("mousemove", function (event) {
+            this.rootDiv.addEventListener("mousemove", function (event) {
                 that._onTouchMove(event);
             });
-            document.body.addEventListener("mouseup", function (event) {
+            this.rootDiv.addEventListener("mouseup", function (event) {
                 that._onTouchEnd(event);
             });
         };
 
         HTML5TouchContext.prototype.addTouchListener = function () {
             var that = this;
-            document.body.addEventListener("touchstart", function (event) {
+            this.rootDiv.addEventListener("touchstart", function (event) {
                 var l = event.changedTouches.length;
                 for (var i = 0; i < l; i++) {
                     that._onTouchBegin(event.changedTouches[i]);
                 }
                 that.prevent(event);
             }, false);
-            document.body.addEventListener("touchmove", function (event) {
+            this.rootDiv.addEventListener("touchmove", function (event) {
                 var l = event.changedTouches.length;
                 for (var i = 0; i < l; i++) {
                     that._onTouchMove(event.changedTouches[i]);
                 }
                 that.prevent(event);
             }, false);
-            document.body.addEventListener("touchend", function (event) {
+            this.rootDiv.addEventListener("touchend", function (event) {
                 var l = event.changedTouches.length;
                 for (var i = 0; i < l; i++) {
                     that._onTouchEnd(event.changedTouches[i]);
                 }
                 that.prevent(event);
             }, false);
-            document.body.addEventListener("touchcancel", function (event) {
+            this.rootDiv.addEventListener("touchcancel", function (event) {
                 var l = event.changedTouches.length;
                 for (var i = 0; i < l; i++) {
                     that._onTouchEnd(event.changedTouches[i]);
@@ -130,8 +131,8 @@ var egret;
         };
 
         HTML5TouchContext.prototype.inOutOfCanvas = function (event) {
-            var location = this.getLocation(this.canvas, event);
-            if (location.x < 0 || location.y < 0 || location.x > this.canvas.width || location.y > this.canvas.height) {
+            var location = this.getLocation(this.rootDiv, event);
+            if (location.x < 0 || location.y < 0 || location.x > egret.MainContext.instance.stage.width || location.y > egret.MainContext.instance.stage.height) {
                 return true;
             }
             return false;
@@ -142,7 +143,7 @@ var egret;
         };
 
         HTML5TouchContext.prototype._onTouchBegin = function (event) {
-            var location = this.getLocation(this.canvas, event);
+            var location = this.getLocation(this.rootDiv, event);
             var identifier = -1;
             if (event.hasOwnProperty("identifier")) {
                 identifier = event.identifier;
@@ -151,7 +152,7 @@ var egret;
         };
 
         HTML5TouchContext.prototype._onTouchMove = function (event) {
-            var location = this.getLocation(this.canvas, event);
+            var location = this.getLocation(this.rootDiv, event);
             var identifier = -1;
             if (event.hasOwnProperty("identifier")) {
                 identifier = event.identifier;
@@ -160,7 +161,7 @@ var egret;
         };
 
         HTML5TouchContext.prototype._onTouchEnd = function (event) {
-            var location = this.getLocation(this.canvas, event);
+            var location = this.getLocation(this.rootDiv, event);
             var identifier = -1;
             if (event.hasOwnProperty("identifier")) {
                 identifier = event.identifier;
@@ -168,13 +169,13 @@ var egret;
             this.onTouchEnd(location.x, location.y, identifier);
         };
 
-        HTML5TouchContext.prototype.getLocation = function (canvas, event) {
+        HTML5TouchContext.prototype.getLocation = function (rootDiv, event) {
             var doc = document.documentElement;
             var win = window;
             var left, top, tx, ty;
 
-            if (typeof canvas.getBoundingClientRect === 'function') {
-                var box = canvas.getBoundingClientRect();
+            if (typeof rootDiv.getBoundingClientRect === 'function') {
+                var box = rootDiv.getBoundingClientRect();
                 left = box.left;
                 top = box.top;
             } else {

@@ -76,9 +76,8 @@ var egret;
                     var container = new egret.EqualToFrame();
                     var policy = new egret.ResolutionPolicy(container, content);
                     egret.StageDelegate.getInstance()._setResolutionPolicy(policy);
-                    var canvas = document.getElementById(egret.StageDelegate.canvas_name);
-                    this._stageWidth = canvas.width;
-                    this._stageHeight = canvas.height;
+                    this._stageWidth = egret.StageDelegate.getInstance()._stageWidth;
+                    this._stageHeight = egret.StageDelegate.getInstance()._stageHeight;
                     this.dispatchEventWith(egret.Event.RESIZE);
                 }
             },

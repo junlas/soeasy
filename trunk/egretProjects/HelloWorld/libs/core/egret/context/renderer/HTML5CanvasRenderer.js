@@ -42,8 +42,9 @@ var egret;
         function HTML5CanvasRenderer(canvas) {
             _super.call(this);
             this.globalAlpha = 1;
-            this.canvas = canvas;
-            this.canvasContext = canvas.getContext("2d");
+
+            this.canvas = canvas || this.createCanvas();
+            this.canvasContext = this.canvas.getContext("2d");
             var f = this.canvasContext.setTransform;
             var that = this;
             this.canvasContext.setTransform = function (a, b, c, d, tx, ty) {
@@ -66,6 +67,21 @@ var egret;
             this._transformTy = 0;
             _super.call(this);
         }
+        HTML5CanvasRenderer.prototype.createCanvas = function () {
+            var canvas = egret.Browser.getInstance().$("#egretCanvas");
+            if (!canvas) {
+                var container = document.getElementById(egret.StageDelegate.canvas_div_name);
+                canvas = egret.Browser.getInstance().$new("canvas");
+                canvas.id = "egretCanvas";
+                canvas.width = egret.MainContext.instance.stage.stageWidth; //stageW
+                canvas.height = egret.MainContext.instance.stage.stageHeight; //stageH
+                canvas.style.width = container.style.width;
+                canvas.style.height = container.style.height;
+                container.appendChild(canvas);
+            }
+            return canvas;
+        };
+
         HTML5CanvasRenderer.prototype.clearScreen = function () {
             //            this.setTransform(egret.Matrix.identity.identity());
             var list = egret.RenderFilter.getInstance().getDrawAreaList();
@@ -127,9 +143,9 @@ var egret;
 
         HTML5CanvasRenderer.prototype.setupFont = function (textField) {
             var ctx = this.canvasContext;
-            var font = textField.italic ? "italic " : "normal ";
-            font += textField.bold ? "bold " : "normal ";
-            font += textField.size + "px " + textField.fontFamily;
+            var font = textField._italic ? "italic " : "normal ";
+            font += textField._bold ? "bold " : "normal ";
+            font += textField._size + "px " + textField._fontFamily;
             ctx.font = font;
             ctx.textAlign = "left";
             ctx.textBaseline = "middle";
@@ -143,7 +159,7 @@ var egret;
         HTML5CanvasRenderer.prototype.drawText = function (textField, text, x, y, maxWidth) {
             var textColor = textField._textColorString;
             var strokeColor = textField._strokeColorString;
-            var outline = textField.stroke;
+            var outline = textField._stroke;
             var renderContext = this.canvasContext;
             renderContext.fillStyle = textColor;
             renderContext.strokeStyle = strokeColor;
@@ -325,7 +341,7 @@ var egret_h5_graphics;
         this.commandQueue.push(new Command(function (x, y, ax, ay) {
             var rendererContext = this.renderContext;
             var canvasContext = this.canvasContext;
-            canvasContext.quadraticCurveTo(rendererContext._transformTx + x, rendererContext._transformTy + y, ax, ay);
+            canvasContext.quadraticCurveTo(rendererContext._transformTx + x, rendererContext._transformTy + y, rendererContext._transformTx + ax, rendererContext._transformTy + ay);
         }, this, [controlX, controlY, anchorX, anchorY]));
         this.lineX = anchorX;
         this.lineY = anchorY;
