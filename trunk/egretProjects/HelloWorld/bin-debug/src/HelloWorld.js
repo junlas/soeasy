@@ -16,4 +16,3 @@ var HelloWorld = (function (_super) {
     };
     return HelloWorld;
 })(egret.DisplayObjectContainer);
-HelloWorld.prototype.__class__ = "HelloWorld";
