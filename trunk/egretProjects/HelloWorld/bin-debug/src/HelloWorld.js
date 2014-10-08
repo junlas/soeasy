@@ -27,6 +27,8 @@ var HelloWorld = (function (_super) {
         bgBitmap.texture = bgImage;
         this.addChild(bgBitmap);
         var preloadArr = RES.getGroupByName("preload");
+        var resItem = preloadArr[1];
+        console.log(resItem.data);
     };
     HelloWorld.prototype.onGroupProg = function (e) {
         if (e.groupName == "preload") {
