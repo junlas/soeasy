@@ -2,7 +2,7 @@
  * Created by mebius on 14-7-22.
  */
 
-class Game extends egret.DisplayObjectContainer
+class Game extends egret.Sprite
 {
     public constructor ()
     {
@@ -13,6 +13,12 @@ class Game extends egret.DisplayObjectContainer
     private onAddStage():void
     {
         egret.Profiler.getInstance().run();
+        var w:number = this.stage.stageWidth;
+        var h:number = this.stage.stageHeight;
+
+        this.graphics.beginFill(0xCCFF00);
+        this.graphics.drawRect(0,0,w,h);
+        this.graphics.endFill();
 
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onGroupComp,this);
         RES.loadConfig("resource/resource.json","resource/");

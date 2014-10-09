@@ -15,6 +15,11 @@ var Game = (function (_super) {
     }
     Game.prototype.onAddStage = function () {
         egret.Profiler.getInstance().run();
+        var w = this.stage.stageWidth;
+        var h = this.stage.stageHeight;
+        this.graphics.beginFill(0xCCFF00);
+        this.graphics.drawRect(0, 0, w, h);
+        this.graphics.endFill();
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onGroupComp, this);
         RES.loadConfig("resource/resource.json", "resource/");
         RES.loadGroup("gameres");
@@ -88,4 +93,4 @@ var Game = (function (_super) {
         this.createNewRect();
     };
     return Game;
-})(egret.DisplayObjectContainer);
+})(egret.Sprite);
