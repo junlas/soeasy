@@ -28,7 +28,7 @@ class HelloWorld extends egret.DisplayObjectContainer {
 
         var preloadArr:RES.ResourceItem[] = RES.getGroupByName("preload");
         var resItem:RES.ResourceItem = preloadArr[1];
-        console.log(resItem.data);
+        //RES.getResAsync(resItem.name,);
 
     }
 
