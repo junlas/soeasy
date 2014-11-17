@@ -1,7 +1,7 @@
 {
 	"groups":[
 	{
-		"keys":"button_json,end_background,gamemenu_json,sence_background,setting_background,settingscreen_json,start_background,start_logo,tile_json,about_background",
+		"keys":"about_background,button_json,end_background,gamemenu_json,sence_background,setting_background,settingscreen_json,start_background,start_logo,tile_json",
 		"name":"preload"
 	},
 	{
@@ -10,8 +10,13 @@
 	}],
 	"resources":[
 	{
+		"name":"about_background",
+		"type":"image",
+		"url":"assets/about_background.png"
+	},
+	{
 		"name":"button_json",
-		"subkeys":"sound_non_normal,icon_down,custom_down,return_normal,retry_down,music_non_down,retry2_normal,retry_normal,setting_down,pause_normal,sound_normal,play_down,sound_down,sound_non_down,pause_down,music_normal,icon_normal,music_non_normal,return_down,retry2_down,music_down,play_normal,setting_normal,custom_normal",
+		"subkeys":"sound_non_down,sound_down,music_down,retry_down,music_non_normal,custom_normal,return_down,icon_normal,play_down,setting_down,pause_down,pause_normal,play_normal,custom_down,music_non_down,setting_normal,retry2_down,music_normal,retry_normal,sound_non_normal,return_normal,icon_down,retry2_normal,sound_normal",
 		"type":"sheet",
 		"url":"assets/button.json"
 	},
@@ -22,13 +27,13 @@
 	},
 	{
 		"name":"gamemenu_json",
-		"subkeys":"level_small_normal,menubackground,highscroce,level_small_special,level_small_easy",
+		"subkeys":"level_small_special,level_small_easy,level_small_normal,menubackground,highscroce",
 		"type":"sheet",
 		"url":"assets/gamemenu.json"
 	},
 	{
 		"name":"icon_json",
-		"subkeys":"loading_logo,level_easy,level_normal,loading_logo2,level_special",
+		"subkeys":"loading_logo2,loading_logo,level_normal,level_special,level_easy",
 		"type":"sheet",
 		"url":"assets/icon.json"
 	},
@@ -44,7 +49,7 @@
 	},
 	{
 		"name":"settingscreen_json",
-		"subkeys":"howtoplay_4,howtoplay_return,about_logo,howtoplay_2,howtoplay_prev,howtoplay_next,howtoplay_1,howtoplay_3,about_logo2",
+		"subkeys":"howtoplay_3,howtoplay_next,howtoplay_4,howtoplay_return,howtoplay_2,howtoplay_1,howtoplay_prev,about_logo2,about_logo",
 		"type":"sheet",
 		"url":"assets/settingscreen.json"
 	},
@@ -60,13 +65,8 @@
 	},
 	{
 		"name":"tile_json",
-		"subkeys":"tile_7,tile_2,tile_stone2,tile_8,tile_water,tile_11,tile_4,tile_9,tile_6,tile_3,tile_5,tile_shovel,tile_1,tile_stone,tile_10",
+		"subkeys":"tile_stone,tile_shovel,tile_4,tile_8,tile_5,tile_11,tile_10,tile_6,tile_1,tile_stone2,tile_9,tile_2,tile_water,tile_3,tile_7",
 		"type":"sheet",
 		"url":"assets/tile.json"
-	},
-	{
-		"name":"about_background",
-		"type":"image",
-		"url":"assets/about_background.png"
 	}]
 }

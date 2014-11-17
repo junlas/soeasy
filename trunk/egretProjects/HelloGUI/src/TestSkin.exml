@@ -1,10 +1,1 @@
-<?xml version='1.0' encoding='utf-8'?>
-<e:Skin xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
-	<w:HostComponent name="egret.gui.SkinnableComponent"/>
-	<w:Declarations/>
-	<e:states>
-		<e:State name="normal"/>
-		<e:State name="disabled"/>
-	</e:states>
-	<e:Button label="Hello Egret" left="0" right="0" top="0" bottom="0" skinName="skins.components.BittonSkin"/>
-</e:Skin>
+<?xml version='1.0' encoding='utf-8'?><e:Skin xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">	<w:HostComponent name="egret.gui.SkinnableComponent"/>	<w:Declarations/>	<e:states>		<e:State name="up"/>		<e:State name="down"/>		<e:State name="disabled"/>	</e:states>	<e:Button label="Hello Egret" left="0" right="0" top="0" bottom="0" skinName="skins.components.BittonSkin" left.disabled="30" right.disabled="30"/></e:Skin>

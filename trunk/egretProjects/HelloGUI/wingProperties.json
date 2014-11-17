@@ -51,13 +51,13 @@
 				{
 					"isFolder":false,
 					"key":"custom_down",
-					"name":"custom_down"
+					"name":"custom_down",
+					"scale9grid":"36,34,25,24"
 				},
 				{
 					"isFolder":false,
 					"key":"custom_normal",
-					"name":"custom_normal",
-					"scale9grid":"39,37,19,13"
+					"name":"custom_normal"
 				},
 				{
 					"isFolder":false,

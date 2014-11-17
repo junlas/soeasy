@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectResources">
-    <resource url="http://ns.egret-labs.org/egret" location="$PROJECT_DIR$/../../../../../egret-core/tools/lib/exml/exml.xsd" />
+    <resource url="http://ns.egret-labs.org/egret" location="$PROJECT_DIR$/../../../../egret-core/tools/lib/exml/exml.xsd" />
   </component>
   <component name="ProjectRootManager" version="2" />
 </project>
