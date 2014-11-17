@@ -1,0 +1,11 @@
+{
+"resources":
+	[
+		{"name":"assets","type":"sheet","url":"assets/assets.json"}
+	],
+
+"groups":
+	[
+        {"name":"preload","keys":"assets"}
+	]
+}

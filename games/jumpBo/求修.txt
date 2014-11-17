@@ -1,0 +1,63 @@
+
+D:\labs\DIY>egret build jumpBo -e
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(135,12): error TS2342: An
+index expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(137,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(140,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(145,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(146,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(147,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(148,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(149,34): error TS2342: An
+index expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(151,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(152,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(153,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(154,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(155,34): error TS2342: An
+index expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(178,12): error TS2342: An
+index expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(180,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(183,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(188,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(189,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(190,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(191,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(192,34): error TS2342: An
+index expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(194,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(195,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(196,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(197,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(198,34): error TS2342: An
+index expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(206,8): error TS2342: An i
+ndex expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(209,12): error TS2342: An
+index expression argument must be of type 'string', 'number', or 'any'.
+D:/labs/DIY/jumpBo/src/physics/SimplePhysicsSolver.ts(212,12): error TS2342: An
+index expression argument must be of type 'string', 'number', or 'any'.
+编译失败
+
+D:\labs\DIY>
