@@ -94,11 +94,14 @@ class Main extends egret.DisplayObjectContainer{
         bitmap.texture = RES.getRes("bgImage");
         this.gameLayer.addChild(bitmap);
 
+
         //GUI的组件必须都在这个容器内部,UIStage会始终自动保持跟舞台一样大小。
         this.guiLayer = new egret.gui.UIStage();
         this.addChild(this.guiLayer);
 
+
         var button:egret.gui.Button = new egret.gui.Button();
+        button.skinName = "skins.components.ButtonSkin";
         button.horizontalCenter = 0;
         button.verticalCenter = 0;
         button.label = "点击弹窗";
