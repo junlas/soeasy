@@ -90,6 +90,7 @@ var Main = (function (_super) {
         this.guiLayer = new egret.gui.UIStage();
         this.addChild(this.guiLayer);
         var button = new egret.gui.Button();
+        button.skinName = "skins.components.ButtonSkin";
         button.horizontalCenter = 0;
         button.verticalCenter = 0;
         button.label = "点击弹窗";

@@ -1,4 +1,5 @@
 {
+	"close":false,
 	"resourcePlugin":
 	{
 		"configs":[
@@ -50,9 +51,135 @@
 				"children":[
 				{
 					"isFolder":false,
+					"key":"level_easy",
+					"name":"level_easy"
+				},
+				{
+					"isFolder":false,
+					"key":"level_normal",
+					"name":"level_normal"
+				},
+				{
+					"isFolder":false,
+					"key":"level_special",
+					"name":"level_special"
+				},
+				{
+					"isFolder":false,
+					"key":"loading_logo",
+					"name":"loading_logo"
+				},
+				{
+					"isFolder":false,
+					"key":"loading_logo2",
+					"name":"loading_logo2"
+				}],
+				"isFolder":false,
+				"key":"button_json",
+				"name":"button_json"
+			},
+			{
+				"isFolder":false,
+				"key":"end_background",
+				"name":"end_background"
+			},
+			{
+				"children":[
+				{
+					"isFolder":false,
+					"key":"tile_1",
+					"name":"tile_1"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_10",
+					"name":"tile_10"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_11",
+					"name":"tile_11"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_2",
+					"name":"tile_2"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_3",
+					"name":"tile_3"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_4",
+					"name":"tile_4"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_5",
+					"name":"tile_5"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_6",
+					"name":"tile_6"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_7",
+					"name":"tile_7"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_8",
+					"name":"tile_8"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_9",
+					"name":"tile_9"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_shovel",
+					"name":"tile_shovel"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_stone",
+					"name":"tile_stone"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_stone2",
+					"name":"tile_stone2"
+				},
+				{
+					"isFolder":false,
+					"key":"tile_water",
+					"name":"tile_water"
+				}],
+				"isFolder":false,
+				"key":"gamemenu_json",
+				"name":"gamemenu_json"
+			},
+			{
+				"isFolder":false,
+				"key":"sence_background",
+				"name":"sence_background"
+			},
+			{
+				"isFolder":false,
+				"key":"setting_background",
+				"name":"setting_background"
+			},
+			{
+				"children":[
+				{
+					"isFolder":false,
 					"key":"custom_down",
-					"name":"custom_down",
-					"scale9grid":"36,34,25,24"
+					"name":"custom_down"
 				},
 				{
 					"isFolder":false,
@@ -170,103 +297,6 @@
 					"name":"sound_normal"
 				}],
 				"isFolder":false,
-				"key":"button_json",
-				"name":"button_json"
-			},
-			{
-				"isFolder":false,
-				"key":"end_background",
-				"name":"end_background"
-			},
-			{
-				"children":[
-				{
-					"isFolder":false,
-					"key":"highscroce",
-					"name":"highscroce"
-				},
-				{
-					"isFolder":false,
-					"key":"level_small_easy",
-					"name":"level_small_easy"
-				},
-				{
-					"isFolder":false,
-					"key":"level_small_normal",
-					"name":"level_small_normal"
-				},
-				{
-					"isFolder":false,
-					"key":"level_small_special",
-					"name":"level_small_special"
-				},
-				{
-					"isFolder":false,
-					"key":"menubackground",
-					"name":"menubackground"
-				}],
-				"isFolder":false,
-				"key":"gamemenu_json",
-				"name":"gamemenu_json"
-			},
-			{
-				"isFolder":false,
-				"key":"sence_background",
-				"name":"sence_background"
-			},
-			{
-				"isFolder":false,
-				"key":"setting_background",
-				"name":"setting_background"
-			},
-			{
-				"children":[
-				{
-					"isFolder":false,
-					"key":"about_logo",
-					"name":"about_logo"
-				},
-				{
-					"isFolder":false,
-					"key":"about_logo2",
-					"name":"about_logo2"
-				},
-				{
-					"isFolder":false,
-					"key":"howtoplay_1",
-					"name":"howtoplay_1"
-				},
-				{
-					"isFolder":false,
-					"key":"howtoplay_2",
-					"name":"howtoplay_2"
-				},
-				{
-					"isFolder":false,
-					"key":"howtoplay_3",
-					"name":"howtoplay_3"
-				},
-				{
-					"isFolder":false,
-					"key":"howtoplay_4",
-					"name":"howtoplay_4"
-				},
-				{
-					"isFolder":false,
-					"key":"howtoplay_next",
-					"name":"howtoplay_next"
-				},
-				{
-					"isFolder":false,
-					"key":"howtoplay_prev",
-					"name":"howtoplay_prev"
-				},
-				{
-					"isFolder":false,
-					"key":"howtoplay_return",
-					"name":"howtoplay_return"
-				}],
-				"isFolder":false,
 				"key":"settingscreen_json",
 				"name":"settingscreen_json"
 			},
@@ -284,78 +314,28 @@
 				"children":[
 				{
 					"isFolder":false,
-					"key":"tile_1",
-					"name":"tile_1"
+					"key":"level_easy",
+					"name":"level_easy"
 				},
 				{
 					"isFolder":false,
-					"key":"tile_10",
-					"name":"tile_10"
+					"key":"level_normal",
+					"name":"level_normal"
 				},
 				{
 					"isFolder":false,
-					"key":"tile_11",
-					"name":"tile_11"
+					"key":"level_special",
+					"name":"level_special"
 				},
 				{
 					"isFolder":false,
-					"key":"tile_2",
-					"name":"tile_2"
+					"key":"loading_logo",
+					"name":"loading_logo"
 				},
 				{
 					"isFolder":false,
-					"key":"tile_3",
-					"name":"tile_3"
-				},
-				{
-					"isFolder":false,
-					"key":"tile_4",
-					"name":"tile_4"
-				},
-				{
-					"isFolder":false,
-					"key":"tile_5",
-					"name":"tile_5"
-				},
-				{
-					"isFolder":false,
-					"key":"tile_6",
-					"name":"tile_6"
-				},
-				{
-					"isFolder":false,
-					"key":"tile_7",
-					"name":"tile_7"
-				},
-				{
-					"isFolder":false,
-					"key":"tile_8",
-					"name":"tile_8"
-				},
-				{
-					"isFolder":false,
-					"key":"tile_9",
-					"name":"tile_9"
-				},
-				{
-					"isFolder":false,
-					"key":"tile_shovel",
-					"name":"tile_shovel"
-				},
-				{
-					"isFolder":false,
-					"key":"tile_stone",
-					"name":"tile_stone"
-				},
-				{
-					"isFolder":false,
-					"key":"tile_stone2",
-					"name":"tile_stone2"
-				},
-				{
-					"isFolder":false,
-					"key":"tile_water",
-					"name":"tile_water"
+					"key":"loading_logo2",
+					"name":"loading_logo2"
 				}],
 				"isFolder":false,
 				"key":"tile_json",
